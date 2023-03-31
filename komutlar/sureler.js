@@ -44,28 +44,39 @@ module.exports = {
 
       case "fatiha":{ 
         
-     const embed = new MessageEmbed()
-     .setAuthor({name:interaction.member.user.tag,iconURL:interaction.member.user.avatarURL({dynamic:true})})
+     const embed1 = new MessageEmbed()
+     .setAuthor({name:"LetCode"})
      .setTitle(`🇹🇷・Türkçe Okunuş-Fatiha Suresi`)
-     .setDescription(`**Bismillahirrahmanirrahim** \r\n 1.Elhamdulillâhi Rabbi’l-âlemîn \r\n 2.Er-Rahmâni’r-Rahîm \r\n 3.Mâliki yevmi’d-dîn \r\n 4.İyyâke na’budu ve iyyâke neste’în \r\n 5.İhdine’s-sırâta’l-mustakîm \r\n 6.Sırâta’l-lezîne en’amte aleyhim \r\n Ğayri’l-meğdûbi aleyhim ve le’d-dâllîn.`)
+     .setDescription(`**Bismillahirrahmanirrahim** \r\n 1.Elhamdulillâhi Rabbi’l-âlemîn \r\n 2.Er-Rahmâni’r-Rahîm \r\n 3.Mâliki yevmi’d-dîn \r\n 4.İyyâke na’budu ve iyyâke neste’în \r\n 5.İhdine’s-sırâta’l-mustakîm \r\n 6.Sırâta’l-lezîne en’amte aleyhim \r\n 7.Ğayri’l-meğdûbi aleyhim ve le’d-dâllîn.`)
+     .setFooter(`LetCode | Mrsn`)
      .setColor("GREEN");
-     interaction.reply({embeds:[embed]});
-                
+     interaction.reply({embeds:[embed1]});
+ break;
+        }
+          
             
-        interaction.reply({embeds:[embed]});
-
-                        break;
-        }
-            case "cikar":
-
+      case "bakara":
+                const embed2 = new MessageEmbed()
+ 
+     .setAuthor({name:"LetCode"})
+     .setTitle(`Maalesef karakter sayısı limiti aşıyor`)
+     .setFooter(`LetCode | Mrsn`)
+     .setColor("GREEN");
+     interaction.reply({embeds:[embed2]});
+                    
+  case "imran":
+    const embed3 = new MessageEmbed()
+     .setAuthor({name:"LetCode"})
+     .setTitle(`Maalesef karakter sayısı limiti aşıyor`)
+     .setFooter(`LetCode | Mrsn`)
+     .setColor("GREEN");
+     interaction.reply({embeds:[embed3]});
 
             
-                break;
-                       
-
+            
+            
         }
-      
-        }
+ }
 
 };
 
