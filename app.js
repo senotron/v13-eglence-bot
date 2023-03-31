@@ -1,14 +1,9 @@
 const {Client} = require('discord.js');
 const client = new Client({intents:519});
 const fs = require('fs');
-const db = require('mongoose');
 const {REST} = require('@discordjs/rest');
 const { Routes } = require("discord-api-types/v10");
 const token = "TOKENİNİZ";
-const mongoDB = "MONGO_DB_URL";
-db.connect(mongoDB)
-.then(() => console.log("MongoDB bağlantısı başarılı"))
-.catch(err => console.log("Mongo bağlantısı başarısız oldu: "+err));
 
 global.client = client;
 client.commands = (global.commands = []);
@@ -48,11 +43,11 @@ fs.readdir("./events/", (_err, files) => {
 client.on("ready",async () => {
 
     console.log("Bot Hizmete Hazır!");
-    client.user.setActivity("RabeL 💖 Gweep Creative", {type:"WATCHING"});
+    client.user.setActivity("LetCode", {type:"WATCHING"});
     const rest = new REST({ version: "10" }).setToken(token);
     try {
       await rest.put(Routes.applicationCommands(client.user.id), {
-        body: commands,
+        body: client.commands,
       });
     
     } catch (error) {
