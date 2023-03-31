@@ -65,7 +65,7 @@ module.exports = {
      interaction.reply({embeds:[embed2]});
                     
   case "imran":
-    const embed3 = new MessageEmbed()
+     const embed3 = new MessageEmbed()
      .setAuthor({name:"LetCode"})
      .setTitle(`Maalesef karakter sayısı limiti aşıyor`)
      .setFooter(`LetCode | Mrsn`)
