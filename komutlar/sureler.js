@@ -45,12 +45,13 @@ module.exports = {
       case "fatiha":{ 
         
      const embed = new MessageEmbed()
-                      .setAuthor({name:interaction.member.user.tag,iconURL:interaction.member.user.avatarURL({dynamic:true})})
-                      .setDescription(`<@!${id}> isimli kullanıcının yasağı kaldırıldı`)
-                      .setColor("GREEN");
-                      interaction.reply({embeds:[embed]});
+     .setAuthor({name:interaction.member.user.tag,iconURL:interaction.member.user.avatarURL({dynamic:true})})
+     .setTitle(`🇹🇷・Türkçe Okunuş-Fatiha Suresi`)
+     .setDescription(`**Bismillahirrahmanirrahim** \r\n 1.Elhamdulillâhi Rabbi’l-âlemîn \r\n 2.Er-Rahmâni’r-Rahîm \r\n 3.Mâliki yevmi’d-dîn \r\n 4.İyyâke na’budu ve iyyâke neste’în \r\n 5.İhdine’s-sırâta’l-mustakîm \r\n 6.Sırâta’l-lezîne en’amte aleyhim \r\n Ğayri’l-meğdûbi aleyhim ve le’d-dâllîn.`)
+     .setColor("GREEN");
+     interaction.reply({embeds:[embed]});
                 
-            }
+            
         interaction.reply({embeds:[embed]});
 
                         break;
