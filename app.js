@@ -2,8 +2,8 @@ const {Client} = require('discord.js');
 const client = new Client({intents:519});
 const fs = require('fs');
 const {REST} = require('@discordjs/rest');
-const { Routes } = require("discord-api-types/v10");
-const token = "TOKENİNİZ";
+const { Routes } = require("discord-api-types/v9");
+const token = "MTA0MzQ2MTI5OTM0ODE3Njk5OQ.GqvPQJ.TtpU-1-hMIfPlUpIcn2R9axDFecCIH42TINkQ8";
 
 global.client = client;
 client.commands = (global.commands = []);
@@ -44,7 +44,7 @@ client.on("ready",async () => {
 
     console.log("Bot Hizmete Hazır!");
     client.user.setActivity("LetCode", {type:"WATCHING"});
-    const rest = new REST({ version: "10" }).setToken(token);
+    const rest = new REST({ version: "9" }).setToken(token);
     try {
       await rest.put(Routes.applicationCommands(client.user.id), {
         body: client.commands,
