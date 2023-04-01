@@ -1,6 +1,6 @@
 const { MessageEmbed, Client, CommandInteraction,MessageButton,MessageActionRow } = require("discord.js");
 
-const bilgiler = [
+const msg = [
    "52 ABD Doları Soydun",
   "31 ABD Doları Soydun",
   "tüh bee polis geldi kaç",
@@ -35,28 +35,20 @@ module.exports = {
 
 
 
-    const bilgi = bilgiler[Math.floor(Math.random() * bilgiler.length)]
+    const para = msg[Math.floor(Math.random() * msg.length)]
 
     const workEmbed = new MessageEmbed()
-        .setDescription(`**\ ${bilgi} \** `)
+        .setTitle(`**\ ${para} \** `)
         .setColor("RANDOM")
 
-    interaction.reply("**Soygunun yapılacağı mekan seciliyor..**"
-  
-  ).then(
-  function(i){
-    i.edit("**mekan bulundu.**") 
-     interaction.edit(2 * 3000000)
-    i.edit({
-      embeds: [workEmbed],
-
-      
-    });
-
-    
-
+    interaction.reply(
+{
+      embeds: [workEmbed]});
+ 
   }, 
 };
+
+  
 
 
 
