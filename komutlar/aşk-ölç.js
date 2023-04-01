@@ -1,43 +1,29 @@
-const { MessageEmbed,Permissions } = require("discord.js");
+const { Permissions,Client,CommandInteraction,MessageEmbed,MessageActionRow, MessageButton, MessageSelectMenu } = require("discord.js");
+
 module.exports = {
-    name:"unban",
-    description: 'Belirlenen kullanının yasağını kaldırır',
-    type:1,
+  name: "aşk-ölç",
+  description: 'Üyeye timeout atar/kaldırır',
+  options: [
+      {
+          name: "member", //option ismi
+          description: "timeout işlemi uygulanacak üye", 
+          type: 6, 
+          required: true 
+      }
+    
+  ],
+ run: async (client, interaction) => { 
+  const member = interaction.options.getMember("member");
+  const asık = interaction.member
+     const embedmrsn = new MessageEmbed()
+     .setAuthor("LetCode",interaction.member.user.avatarURL(),member.avatarURL())
+     .setTitle(`Aşk Ölçer💞`)
+     .setDescription(``)
 
-    options: [
-        {
-            name:"id",
-            description:"Yasağı kaldılacak Kullanıcıyı Seçin",
-            type:3,
-            required:true
-        }
-    ],
-    run: async (client, interaction) => {
-        const model = require("../models/ban")
-        const data = await model.findOne({ guildID: interaction.guild.id }) || null;
+     .setFooter(`LetCode | Mrsn`)
+     .setColor("GREEN");
+     interaction.reply({embeds:[embedmrsn]});
 
-        const banRol = data ? data.roleID : null;
 
-        if(
-            interaction.member.roles.cache.has(banRol) ||
-            interaction.member.permissions.has(Permissions.FLAGS.BAN_MEMBERS)
-            
-         ){
-            const id = interaction.options.getString('id')
-            try{
-                await interaction.guild.bans.fetch(id)
-                .then(() =>{
-                 
-                      interaction.guild.members.unban(id);
-                      
-                      const embed = new MessageEmbed()
-                      .setAuthor({name:interaction.member.user.tag,iconURL:interaction.member.user.avatarURL({dynamic:true})})
-                      .setDescription(`<@!${id}> isimli kullanıcının yasağı kaldırıldı`)
-                      .setColor("GREEN");
-                      interaction.reply({embeds:[embed]});
-                })
-            }
-             catch{  interaction.reply({content:'Kullanıcı Bulunamadı',  ephemeral: true}) }    
-            }
-    }
+},
 };
