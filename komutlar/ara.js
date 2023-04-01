@@ -1,6 +1,6 @@
 const { Permissions,Client,CommandInteraction,MessageEmbed,MessageActionRow, MessageButton, MessageSelectMenu } = require("discord.js");
 module.exports = {
-  name: "not",
+  name: "ara",
   description: "Not yazarsın",
   type:1,
   options: [
@@ -16,74 +16,65 @@ module.exports = {
     
 
 
-    const SubCmd = interaction.options.getSubcommand();
     const member = interaction.member;
    const guild = interaction.guild;
 
 
 
-        
-
-        const not2 = interaction.options.getString("not");
-        
-        await klm.updateOne({MemberId:member.id},{$push:{bKlm:not2}},{upsert:true});
+              
         //Seçenek kısmı
        const row = new MessageActionRow()
       .addComponents(
         new MessageSelectMenu()
-        .setCustomId("infoselectmenu") 
+        .setCustomId("ara") 
         .setPlaceholder('Not Listen')
         .setMinValues(1)
         .setMaxValues(1)
         .addOptions([
           
           {
-            label:"Not Listen(Gizli)" ,
-            description:"",
-            value:"psychopath",
-            emoji:"<:not:1046376931542700083>" 
+            label:"155" ,
+            description:"Polisi ararsın",
+            value:"155",
+            emoji:"👨🏻‍✈️" 
           },
                     {
-            label:"Not Listen(Herkese açık)" ,
-            description:"",
-            value:"psychopath2",
+            label:"112" ,
+            description:"Ambulans ara",
+            value:"112",
             emoji:"<:not:1046376931542700083>" 
           },
           ])
         )
-        await interaction.reply({content: `\`${not2}\` notu, not listene eklendi<:not:1046376931542700083>`, components: [row],ephemeral: true})
+        await interaction.reply({content: `Aramak istediğin numarauyı seç`, components: [row]})
         client.on("interactionCreate", async interaction => {
           if (!interaction.isSelectMenu()) return;
-          if(interaction.customId === "infoselectmenu") {
+          if(interaction.customId === "ara") {
              
    
-     if(interaction.values[0] === "psychopath") { //https://psychopath-techonology.ml/
+     if(interaction.values[0] === "155") { 
       const embed = new MessageEmbed()
-      const d = await klm.findOne({MemberId:member.id})
-
-     const kelimeler = d.bKlm.join("\n")
-
-      await interaction.reply({embeds:[
-          {
-            title:`Not Listen<:not:1046376931542700083>`,
-            description:`${kelimeler}`
-          }
-        ],ephemeral: true});
+.setDescription(`${interaction.member.username} **Polis Geliyor** 👮🏽‍♂️`)
+      .setColor("BLACK")
+      .setFooter(
+        `${interaction.member.username} tarafından istendi.`
+      )
+      .setImage(
+        `http://www.hareketligifler.net/data/media/114/polis-hareketli-resim-0023.gif`
+      );
+   interaction.reply({embeds: [embed]})
     } 
-           else if(interaction.values[0] === "psychopath2") { //https://psychopath-techonology.ml/
+           else if(interaction.values[0] === "psychopath2") { 
       const embed = new MessageEmbed()
-      const d = await klm.findOne({MemberId:member.id})
-     const kelimeler = d.bKlm.join("\n")
-
-      await interaction.reply({embeds:[
-          {
-            title:`Not Listen<:not:1046376931542700083>`,
-            description:`${kelimeler}`
-          }
-        ],ephemeral: false});
+     
     } 
-          }  }) 
-        //https://psychopath-techonology.ml/
+          
+          
+          
+          
+          
+          }}) 
+    
         
         
         
