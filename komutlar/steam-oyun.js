@@ -1,15 +1,14 @@
 const { Client,  MessageEmbed, Permissions} = require("discord.js");
-const film = require("film-apisi");
 
 module.exports = {
-  name: "steam-oyun-ara",
-  description: "Oyun ararsın",
+  name: "tweet",
+  description: "Kendi adınıza sahte bir tweet atarsınız.",
   type: 1,
   options: [
   
     {
-        name:"oyun",
-        description:"Oyun ismini girin!",
+        name:"metin",
+        description:"Tweet'inde yazmasını istediğini yaz",
         type:3,
         required:true
     },
@@ -17,13 +16,12 @@ module.exports = {
 ],
 
   run: async(client, interaction) => {
-    const oyun = interaction.options.getString('oyun')
-  let film = film.ara(oyun);
-
+    const oyun = interaction.options.getString('metin')
+   
       const embed = new MessageEmbed()
         .setAuthor("Steam Store")
         .setColor("BLACK")
-        .setTitle(film.ismi)
+        .setTitle(films.ismi)
 
    interaction.reply({embeds: [embed]})     
 
