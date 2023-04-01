@@ -42,7 +42,7 @@ module.exports = {
             label:"112" ,
             description:"Ambulans ara",
             value:"112",
-            emoji:"<:not:1046376931542700083>" 
+            emoji:"🚑" 
           },
           ])
         )
@@ -54,19 +54,27 @@ module.exports = {
    
      if(interaction.values[0] === "155") { 
       const embed = new MessageEmbed()
-.setDescription(`${interaction.member.username} **Polis Geliyor** 👮🏽‍♂️`)
+.setDescription(`${interaction.member} **Polis Geliyor** 👮🏽‍♂️`)
       .setColor("BLACK")
       .setFooter(
-        `${interaction.member.username} tarafından istendi.`
+        `${interaction.member.user.username} tarafından istendi.`
       )
       .setImage(
         `https://www.hareketligifler.net/data/media/1449/polis-arabasi-hareketli-resim-0008.gif`
       );
    interaction.reply({embeds: [embed]})
     } 
-           else if(interaction.values[0] === "psychopath2") { 
-      const embed = new MessageEmbed()
-     
+           else if(interaction.values[0] === "112") { 
+ const embed = new MessageEmbed()
+.setDescription(`${interaction.member} **Ambulans Geliyor** 🚑`)
+      .setColor("BLACK")
+      .setFooter(
+        `${interaction.member.user.username} tarafından istendi.`
+      )
+      .setImage(
+        `https://www.hareketligifler.net/data/media/937/ambulans-hareketli-resim-0016.gif`
+      );
+   interaction.reply({embeds: [embed]})     
     } 
           
           
@@ -84,3 +92,8 @@ module.exports = {
 
   
 };
+
+
+
+
+//LetCode MrSn
