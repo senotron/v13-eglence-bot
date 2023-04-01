@@ -39,7 +39,7 @@ module.exports = {
         embeds: [
           {
             author: {
-              name: `${interaction.member.user.user} • Tweet `,
+              name: `${interaction.user.username} • Tweet `,
             },
             image: {
               url: JSON.parse(body).message,
