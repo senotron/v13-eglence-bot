@@ -1,4 +1,5 @@
 const { Client,  MessageEmbed, Permissions} = require("discord.js");
+var request = require("request");
 
 module.exports = {
   name: "tweet",
@@ -16,18 +17,38 @@ module.exports = {
 ],
 
   run: async(client, interaction) => {
-    const oyun = interaction.options.getString('metin')
-   
-      const embed = new MessageEmbed()
-        .setAuthor("Steam Store")
-        .setColor("BLACK")
-        .setTitle(films.ismi)
+ const text = interaction.options.getString("metin");
 
-   interaction.reply({embeds: [embed]})     
 
-      
-  
- 
+    await interaction.deferReply();
+
+    request(`https://nekobot.xyz/api/imagegen?type=tweet&text=${encodeURI(text)}&username=${encodeURI(interaction.member.user.username)}&image=${encodeURI(interaction.member.user.avatarURL())}`, function (error, response, body) {
+
+      if (error || !body || !JSON.parse(body).success)
+        return interaction.editReply({
+          embeds: [
+            {
+              color: client.settings.embedColors.red,
+              title: '**»** Bir Hata Oluştu!',
+              description: `**•** Hatanın sebebini bilmiyorum.`
+            }
+          ]
+        });
+
+      interaction.editReply({
+        embeds: [
+          {
+            author: {
+              name: `${interaction.member.user.user} • Tweet `,
+            },
+            image: {
+              url: JSON.parse(body).message,
+            }
+          }
+        ]
+      });
+
+    });
+
   }
-
 };
