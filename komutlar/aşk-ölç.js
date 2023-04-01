@@ -15,10 +15,13 @@ module.exports = {
  run: async (client, interaction) => { 
   const member = interaction.options.getMember("member");
   const asık = interaction.member
+  let fif = `https://media.tenor.com/0pMICRoCOoAAAAPo/fire-heart.mp4`
+
      const embedmrsn = new MessageEmbed()
-     .setAuthor("LetCode",interaction.member.user.avatarURL(),member.avatarURL())
+     .setAuthor("LetCode",interaction.member.user.avatarURL())
      .setTitle(`Aşk Ölçer💞`)
      .setDescription(``)
+        .setImage(fif)
 
      .setFooter(`LetCode | Mrsn`)
      .setColor("GREEN");
