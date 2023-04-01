@@ -6,20 +6,15 @@ const faiz = [
     "40%-Deneye bilirsiniz!",
     "70%-İdare eder",
     "80%-Sevgili",
-    "100%",
-    "Madison'daki bir matematik öğretmeninin sahip olduğu dünyanın en zeki domuzu çarpım tablosunu 12'lere kadar ezberlemişti.",
-    " Antik Yunan'da zengin aile çocukları hayatları boyunca kılsız olmaları için doğdukları anda zeytinyağına batırılırlardı..",
-    "Dünyanın en geniş yolu olan Brezilya'daki Anıtsal Eksen'de 160 araba yan yana gidebilir.",
-    "Japon balıklarının hatırlama ömürleri yaklaşık 3 saniyedir.",
-    "Gıda renklendiricileri eklenmeseydi eğer, kolanın rengi yeşil olurdu."
+    "100%-Aşık"
 ]
 module.exports = {
   name: "aşk-ölç",
-  description: 'Üyeye timeout atar/kaldırır',
+  description: 'Aşk ölçer',
   options: [
       {
-          name: "member", //option ismi
-          description: "timeout işlemi uygulanacak üye", 
+          name: "üye", 
+          description: "üye seç", 
           type: 6, 
           required: true 
       }
@@ -28,13 +23,15 @@ module.exports = {
  run: async (client, interaction) => { 
   const member = interaction.options.getMember("member");
   const asık = interaction.member
+  const durum = faiz[Math.floor(Math.random() * faiz.length)]
+
   let fif = `https://media.tenor.com/0pMICRoCOoAAAAPo/fire-heart.mp4`
 
      const embedmrsn = new MessageEmbed()
      .setAuthor("LetCode",interaction.member.user.avatarURL())
-     .setTitle(`Aşk Ölçer💞`)
+     .setTitle(`**\ ${durum} \**💞`)
      .setDescription(``)
-        .setImage(fif)
+        .setThumbnail(fif)
 
      .setFooter(`LetCode | Mrsn`)
      .setColor("GREEN");
@@ -43,3 +40,21 @@ module.exports = {
 
 },
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//LetCode MrSn
