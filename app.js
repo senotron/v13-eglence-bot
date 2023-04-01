@@ -3,7 +3,7 @@ const client = new Client({intents:519});
 const fs = require('fs');
 const {REST} = require('@discordjs/rest');
 const { Routes } = require("discord-api-types/v9");
-const token = "MTA0MzQ2MTI5OTM0ODE3Njk5OQ.GqvPQJ.TtpU-1-hMIfPlUpIcn2R9axDFecCIH42TINkQ8";
+const token = require(`/ayarlar.json`);
 
 global.client = client;
 client.commands = (global.commands = []);
@@ -42,9 +42,9 @@ fs.readdir("./events/", (_err, files) => {
 //#region KOMUTLAR SET
 client.on("ready",async () => {
 
-    console.log("Bot Hizmete Hazır!");
+    console.log("Bot Hizmete Hazır! | MrSn-LetCode");
     client.user.setActivity("LetCode", {type:"WATCHING"});
-    const rest = new REST({ version: "9" }).setToken(token);
+    const rest = new REST({ version: "9" }).setToken(token.token);
     try {
       await rest.put(Routes.applicationCommands(client.user.id), {
         body: client.commands,
@@ -55,4 +55,4 @@ client.on("ready",async () => {
     }
 });
 //#endregion
-client.login(token);
+client.login(token.token);
