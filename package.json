@@ -34,6 +34,7 @@
 		"popcat-wrapper": "^1.5.4",
 		"quick.db": "^9.0.6",
 		"simply-djs": "^3.0.2",
+		"steam-provider": "^0.3.2",
 		"superagent": "^8.0.8",
 		"user-instagram": "^3.0.2",
 		"weather-js": "^2.0.0"

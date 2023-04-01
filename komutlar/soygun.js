@@ -41,9 +41,7 @@ module.exports = {
         .setTitle(`**\ ${para} \** `)
         .setColor("RANDOM")
 
-    interaction.reply(
-{
-      embeds: [workEmbed]});
+    interaction.reply({embeds: [workEmbed]});
  
   }, 
 };
