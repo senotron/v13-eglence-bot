@@ -16,9 +16,13 @@ module.exports = {
 
           const embed = new MessageEmbed()
           .setFooter({text:`${interaction.member.user.tag} tarafından istendi`,iconURL:interaction.member.user.avatarURL({dynamic:true})})
-          .setAuthor({name:`${interaction.member} kullanıcısı ${veri} kullanıcısını öpüyor`})
-          .setImage(`https://media.tenor.com/22w_5_1Iee8AAAPo/monkey-lick.mp4`);
+          .setDescription(`${interaction.member} kullanıcısı ${veri} kullanıcısını öpüyor`)
+          .setImage(`https://media.tenor.com/22w_5_1Iee8AAAAC/monkey-lick.gif`);
             interaction.reply({embeds:[embed]});
         
     }
 }
+
+
+
+//LetCode MrSn
