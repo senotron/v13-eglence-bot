@@ -27,7 +27,7 @@ module.exports = {
       .addComponents(
         new MessageSelectMenu()
         .setCustomId("ara") 
-        .setPlaceholder('Not Listen')
+        .setPlaceholder('Numaralar')
         .setMinValues(1)
         .setMaxValues(1)
         .addOptions([
@@ -60,7 +60,7 @@ module.exports = {
         `${interaction.member.username} tarafından istendi.`
       )
       .setImage(
-        `http://www.hareketligifler.net/data/media/114/polis-hareketli-resim-0023.gif`
+        `https://www.hareketligifler.net/data/media/1449/polis-arabasi-hareketli-resim-0008.gif`
       );
    interaction.reply({embeds: [embed]})
     } 
