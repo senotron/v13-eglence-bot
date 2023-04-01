@@ -1,25 +1,25 @@
 const { Permissions,Client,CommandInteraction,MessageEmbed,MessageActionRow, MessageButton, MessageSelectMenu } = require("discord.js");
 module.exports = {
-  name: "sureler",
-  description: "Kuran Surelerini okuya bilirsin",
+  name: "tkm",
+  description: "Taş,kağıt ve makas oynarsın",
     options:[
         {
-            name:"sure",
-            description:"Sure seç",
+            name:"seçim",
+            description:"Birini seç",
             type:3,
             required:true,
             choices:[
                 {
-                 name:"Fatiha",
-                 value:"fatiha"
+                 name:"Taş",
+                 value:"taş"
                 },
                 {
-                 name:"Bakara",
-                 value:"bakara"
+                 name:"Kağıt",
+                 value:"kağıt"
                 },
                               {
-                 name:"Âl-i İmrân",
-                 value:"imran"
+                 name:"Makas",
+                 value:"makas"
                 }
             ],
         },
@@ -35,19 +35,19 @@ module.exports = {
   run: async (client, interaction) => {
         const {guildId,options,channel} = interaction;
 
-        const secim = options.get("sure").value;
+        const secim = options.get("seçim").value;
 
         const Embed = new MessageEmbed();
     const member = interaction.member;
    const guild = interaction.guild;
         switch(secim){
 
-      case "fatiha":{ 
+      case "taş":{ 
         
      const embed1 = new MessageEmbed()
      .setAuthor({name:"LetCode"})
-     .setTitle(`🇹🇷・Türkçe Okunuş-Fatiha Suresi`)
-     .setDescription(`**Bismillahirrahmanirrahim** \r\n 1.Elhamdulillâhi Rabbi’l-âlemîn \r\n 2.Er-Rahmâni’r-Rahîm \r\n 3.Mâliki yevmi’d-dîn \r\n 4.İyyâke na’budu ve iyyâke neste’în \r\n 5.İhdine’s-sırâta’l-mustakîm \r\n 6.Sırâta’l-lezîne en’amte aleyhim \r\n 7.Ğayri’l-meğdûbi aleyhim ve le’d-dâllîn.`)
+     .setTitle(`Taş-Kağıt-Makas | Kaybettin`)
+     .setDescription(`**Benim seçimim**-Kağıt \r\n **Senin seçimin**-Taş`)
      .setFooter(`LetCode | Mrsn`)
      .setColor("GREEN");
      interaction.reply({embeds:[embed1]});
@@ -55,19 +55,21 @@ module.exports = {
         }
           
             
-      case "bakara":
+      case "kağıt":
                 const embed2 = new MessageEmbed()
  
      .setAuthor({name:"LetCode"})
-     .setTitle(`Maalesef karakter sayısı limiti aşıyor`)
+     .setTitle(`Taş-Kağıt-Makas | Kaybettin`)
+     .setDescription(`**Benim seçimim**-Makas \r\n **Senin seçimin**-Kağıt`)          
      .setFooter(`LetCode | Mrsn`)
      .setColor("GREEN");
      interaction.reply({embeds:[embed2]});
                     
-  case "imran":
+  case "makas":
      const embed3 = new MessageEmbed()
      .setAuthor({name:"LetCode"})
-     .setTitle(`Maalesef karakter sayısı limiti aşıyor`)
+     .setTitle(`Taş-Kağıt-Makas | Kaybettin`)
+    .setDescription(`**Benim seçimim**-Taş \r\n **Senin seçimin**-Makas`)         
      .setFooter(`LetCode | Mrsn`)
      .setColor("GREEN");
      interaction.reply({embeds:[embed3]});
