@@ -1,7 +1,7 @@
 const { Permissions,Client,CommandInteraction,MessageEmbed,MessageActionRow, MessageButton, MessageSelectMenu } = require("discord.js");
 module.exports = {
   name: "ara",
-  description: "Not yazarsın",
+  description: "Seçtiğin numarayı ararsın",
   type:1,
   options: [
     
