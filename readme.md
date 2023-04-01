@@ -1,7 +1,7 @@
 #Discord Eğlence Botu
 
 
- - [Discord Mağaza Botu](https://github.com/MonsterBotTechonolgy/psycho-butonrol)
+ - Discord Mağaza Botu
       - Altyapı tamamen MrSn#0001 kullanıcısına,yani bana mahsustur.(Bazı kısımlar Gweep Creative#0001 aittir)
       - [İletişim](#İletişim)
 

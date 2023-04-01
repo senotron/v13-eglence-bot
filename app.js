@@ -3,7 +3,7 @@ const client = new Client({intents:519});
 const fs = require('fs');
 const {REST} = require('@discordjs/rest');
 const { Routes } = require("discord-api-types/v9");
-const token = require(`/ayarlar.json`);
+const token = require(`./ayarlar.json`);
 
 global.client = client;
 client.commands = (global.commands = []);
