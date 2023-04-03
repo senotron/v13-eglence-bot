@@ -1,8 +1,8 @@
 #Discord Eğlence Botu
 
 
- - Discord Mağaza Botu
-      - Altyapı tamamen MrSn#0001 kullanıcısına,yani bana mahsustur.(Bazı kısımlar Gweep Creative#0001 aittir)
+ - Discord Eğlence Botu
+      - Altyapı tamamen MrSn#0001 kullanıcısına,yani bana mahsustur.
       - [İletişim](#İletişim)
 
 
