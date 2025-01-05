@@ -1,27 +1,27 @@
 {
-	"name": "mrsn",
-	"version": "1.0.0",
-	"description": "LetCode Eğlence Botu",
-	"main": "app.js",
-	"scripts": {
-		"start": "node app.js"
-	},
-	"keywords": [],
-	"author": "",
-	"license": "ISC",
-	"dependencies": {
-		"@discordjs/builders": "^1.2.0",
-		"@discordjs/rest": "^0.3.0",
-		"@discordjs/voice": "^0.11.0",
-		"axios": "^1.1.3",
-		"discord-api-types": "^0.26.1",
-		"discord-sync-commands": "^0.2.0",
-		"discord.js": "^13.6.0",
-		"nodemon": "^2.0.15",
-		"weather-js": "^2.0.0"
-	},
-	"engines": {
-		"node": "16.x",
-		"npm": "7.x"
-	}
+  "name": "senotron",
+  "version": "1.0.0",
+  "description": "Senan Shukurzade Fun Bot",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "keywords": [],
+  "author": "Senan Shukurzade",
+  "license": "MIT",
+  "dependencies": {
+    "@discordjs/builders": "^1.2.0",
+    "@discordjs/rest": "^0.3.0",
+    "@discordjs/voice": "^0.11.0",
+    "axios": "^1.1.3",
+    "discord-api-types": "^0.26.1",
+    "discord-sync-commands": "^0.2.0",
+    "discord.js": "^13.6.0",
+    "nodemon": "^2.0.15",
+    "weather-js": "^2.0.0"
+  },
+  "engines": {
+    "node": "16.x",
+    "npm": "7.x"
+  }
 }
