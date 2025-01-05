@@ -29,7 +29,7 @@ module.exports = {
       .setTitle(`${user.username}, Here's a Turkish Proverb for You!`)
       .setDescription(`**"${atasöz}"**`)
       .setColor("RANDOM")
-      .setFooter("LetCode | MrSn")
+      .setFooter("DESN & Odunchu | Senan Shukurzade")
       .setTimestamp();
 
     await interaction.reply({
