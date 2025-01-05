@@ -1,19 +1,19 @@
-const {Client} = require('discord.js');
-const client = new Client({intents:519});
+const { Client } = require('discord.js');
+const client = new Client({ intents: 519 });
 const fs = require('fs');
-const {REST} = require('@discordjs/rest');
+const { REST } = require('@discordjs/rest');
 const { Routes } = require("discord-api-types/v9");
-const token = require(`./ayarlar.json`);
+const token = require('./settings.json');
 
 global.client = client;
 client.commands = (global.commands = []);
-//#region KOMUTLAR LOAD
-fs.readdir("./komutlar/", (err, files) => {
+
+fs.readdir("./commands/", (err, files) => {
     if (err) throw err;
 
     files.forEach((file) => {
         if (!file.endsWith(".js")) return;
-        let props = require(`./komutlar/${file}`);
+        let props = require(`./commands/${file}`);
     
         client.commands.push({
              name: props.name.toLowerCase(),
@@ -21,29 +21,26 @@ fs.readdir("./komutlar/", (err, files) => {
              options: props.options,
              type: props.type,
         })
-        console.log(`👌 Slash Komut Yüklendi: ${props.name}`);
     });
 });
-//#endregion
-//#region EVENTS LOAD
+
+
 fs.readdir("./events/", (_err, files) => {
     files.forEach((file) => {
         if (!file.endsWith(".js")) return;
         const event = require(`./events/${file}`);
         let eventName = file.split(".")[0];
         
-        console.log(`👌 Event yüklendi: ${eventName}`);
         client.on(eventName, (...args) => {
            event(client, ...args);
         });
     });
 });
-//#endregion
-//#region KOMUTLAR SET
+
 client.on("ready",async () => {
 
-    console.log("Bot Hizmete Hazır! | MrSn-LetCode");
-    client.user.setActivity("LetCode", {type:"WATCHING"});
+    console.log("Bot is Ready! | Senan Shukurzade");
+    client.user.setActivity("https://youtube.com/@senotron", {type:"WATCHING"});
     const rest = new REST({ version: "9" }).setToken(token.token);
     try {
       await rest.put(Routes.applicationCommands(client.user.id), {
@@ -54,5 +51,5 @@ client.on("ready",async () => {
       console.error(error);
     }
 });
-//#endregion
+
 client.login(token.token);
