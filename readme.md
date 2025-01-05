@@ -1,25 +1,18 @@
-#Discord Eğlence Botu
+# 🌟 Star please <3
 
+- [Discord Fun Bot](https://github.com/senotron/discord-fun-bot-v13)
+  - The infrastructure is entirely created by senotron, which means it belongs to me.
+  - [Contact](#contact)
 
- - Discord Eğlence Botu
-      - Altyapı tamamen MrSn#0001 kullanıcısına,yani bana mahsustur.
-      - [İletişim](#İletişim)
+## Contact
+- [My Discord Profile](https://discord.com/users/840158550495723530)
+- [Website](https://senotron.vercel.app)
 
+## Setup
+1. If the `.env` file is not visible, create a new `.env` file.
+2. Add the following values inside it:
+   - **Token**: Add your Discord bot's token.
 
+---
 
-
-## Botun İntentlerini Açmayı Unutma!
-* [Açmak İçin Tıkla](https://discord.com/developers/applications)
-<img src="https://cdn.discordapp.com/attachments/818953120452575322/851116463166849054/3P4KKB.png"/>
-
-
-# İletişim
-* [Discord Profilim](https://discord.com/users/840158550495723530)
-* [Discord Sunucum](https://discord.gg/9eSePtPChU)
-
-
-# Kurulum
-* ayarlar.json doldurun
-<h4>MrSn</h4><h6>LetCode</h6>
-
-
+<h4>Senan Shukurzade</h4>
